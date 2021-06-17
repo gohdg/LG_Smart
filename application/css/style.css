@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  min-height: 100vh;
+  /* background: #e0f7fa; */
+  background-color: rgba(255, 255, 255, 0.7);
+
+  font-family: Poppins;
+  width: 100vw;
+  /* border: 1px solid yellow; */
+}
+
+header {
+  color: white;
+  text-align: right;
+}
+
+header div {
+  padding: 30px 30px 10px;
+}
+.greeting {
+  margin-top: 10px;
+  transform: translateX(-1000px);
+  transition: all 0.5s ease-in-out;
+}
+.greeting-active {
+  transform: translateX(100px);
+}
+.greeting div {
+  padding: 20px;
+}
+.greeting div h1 {
+  font-size: 55px;
+  text-transform: capitalize;
+  color: #454545;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  margin: 40px 0;
+  /* border: 1px solid yellow; */
+}
+
+.container .card {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  margin: 10px 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.container .card .content {
+  position: absolute;
+  bottom: -300px;
+
+  width: 100%;
+  height: 100px;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.7);
+
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* border-radius: 10px; */
+  transition: bottom 0.5s ease-in-out;
+  color: white;
+}
+
+.container .card:hover .content,
+.container .card a:focus .content {
+  bottom: 0;
+}
+
+.container .card .imgBx {
+  position: relative;
+
+  width: 250px;
+  height: 300px;
+}
+
+.container .card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .card .content .contentBx {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container .card .content h3 span {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.container .card .content p {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: initial;
+  /* border: 1px solid yellow; */
+  width: 80%;
+  margin: 20px auto;
+  line-height: 1.5;
+}
+
+.wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}

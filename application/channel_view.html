@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/hcap.js"></script>
+
+    <link rel="stylesheet" href="css/ch_style.css" />
+    <title>TV app</title>
+  </head>
+  <body>
+    <section class="channelbar">
+      <div class="container">
+        <h1>5 SBS</h1>
+      </div>
+    </section>
+    <section class="log">
+      <p id="logmsg"></p>
+    </section>
+    <script src="js/global.js"></script>
+    <script src="js/controller.js"></script>
+    <script>
+      document.addEventListener("keydown", keyNav);
+
+      setTimeout(() => {
+        document.querySelector(".channelbar").style.display = "none";
+      }, 1500);
+    </script>
+  </body>
+</html>

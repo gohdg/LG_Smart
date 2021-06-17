@@ -1,0 +1,29 @@
+<service>
+    <setup>
+        <versionNumber>216</versionNumber>
+        <modelName>42LT770H-UA</modelName>
+        <priority>NORMAL</priority>
+        <content>
+            <type> CH_MAP </type>
+            <subversionNumber>216</subversionNumber>
+            <data>LT770H_Bill_tlx.tlx</data>
+            <frequency>0</frequency>
+            <programNum>0</programNum>
+            <cTag>0</cTag>
+        </content>
+    </setup>
+</service>
+
+<!-- 
+    versionNumber: 버젼 번호 0~65535 
+    subversionNumber : 그냥 똑같이 맞추세요 versionNumber랑
+    modelName: TV 모델명
+    type: CH_MAP: channel map 또는 installer 세팅 값 .tlx, 
+          PTC_FIRMWARE: micom file 업데이트 시 사용
+          EPK_FIRMWARE: MAIN CPU SOFTWARE 업데이트
+          SPLACH_IMAGE: 이미지 사이즈 체크해서 올려야 함
+    frequency: 0 (IP 사용 시)
+    programmNum: 0 (IP 사용 시)
+    cTag: 0 (IP 사용 시)
+
+ -->

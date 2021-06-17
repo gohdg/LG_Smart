@@ -1,0 +1,33 @@
+<service>
+    <setup>
+        <versionNumber>134</versionNumber>
+        <modelName>37LT770H-UA</modelName>
+        <priority>NORMAL</priority>
+        <content>
+            <type>SPLASH_IMAGE</type>
+            <subversionNumber>134</subversionNumber>
+            <data>CP_Splash_JPG_Black_030912.jpg</data>
+            <frequency>0</frequency>
+            <programNum>0</programNum>
+            <cTag>0</cTag>
+        </content>
+
+        <content>
+            <type>EPK_FIRMWARE</type>
+            <subversionNumber>133</subversionNumber>
+            <data>GP4_ATSC_BB_COMMER_DV4_mtk5369_A1_RevNo02789c_kernel_V2_SECURED.epk</data>
+            <frequency>0</frequency>
+            <programNum>0</programNum>
+            <cTag>0</cTag>
+        </content>
+
+        <content>
+            <type>PTC_FIRMWARE</type>
+            <subversionNumber>133</subversionNumber>
+            <data>xxLT770H_v1.00.015.txt</data>
+            <frequency>0</frequency>
+            <programNum>0</programNum>
+            <cTag>0</cTag>
+        </content>
+    </setup>
+</service>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/hcap.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TV app</title>
+  </head>
+  <body>
+    <!-- <div class="wrapper">
+      <video src="assets/1.mp4" autoplay muted loop></video>
+      
+      </div>
+    </div> -->
+    <header>
+      <div>
+        <h3>June 17, 2021</h3>
+      </div>
+    </header>
+    <section class="greeting">
+      <div>
+        <h1>Good morning, James!!!</h1>
+      </div>
+    </section>
+    <section id="menuBar" class="menubar">
+      <div class="container">
+        <div class="card">
+          <a href="#" class="menu">
+            <div class="imgBx">
+              <img src="assets/paradise.jpg" alt="" />
+            </div>
+            <div class="content">
+              <div class="contentBx">
+                <h3>Hotel Information<br /><span>Enjoy your stay</span></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi similique tempora cumque expedita ducimus vitae
+                  atque maxime quaerat qui deserunt?
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="channel_view.html" class="menu">
+            <div class="imgBx">
+              <img src="assets/tv.jpg" alt="" />
+            </div>
+            <div class="content">
+              <div class="contentBx">
+                <h3>TV Channel<br /><span>More than 50channels</span></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi similique tempora cumque expedita ducimus vitae
+                  atque maxime quaerat qui deserunt?
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="#" class="menu menu-app" id="YT">
+            <div class="imgBx">
+              <img src="assets/youtube.jpg " alt="" />
+            </div>
+            <div class="content">
+              <div class="contentBx">
+                <h3>YouTube<br /><span>Creative Designer</span></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi similique tempora cumque expedita ducimus vitae
+                  atque maxime quaerat qui deserunt?
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="#" class="menu menu-app" id="NF">
+            <div class="imgBx">
+              <img src="assets/netflix.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="contentBx">
+                <h3>Netflix<br /><span>New Release</span></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Excepturi similique tempora cumque expedita ducimus vitae
+                  atque maxime quaerat qui deserunt?
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="log">
+      <p id="logmsg"></p>
+    </section>
+
+    <script src="js/global.js"></script>
+    <script src="js/controller.js"></script>
+    <script>
+      var currentFocus = 0;
+      var cntMenu = 0;
+      var menus;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        init();
+      });
+
+      function init() {
+        menus = document.querySelectorAll(".menu");
+        cntMenu = menus.length - 1;
+        document.querySelector(".greeting").classList.add("greeting-active");
+        menus[0].focus();
+
+        // add event listner
+        let appMenus = document.querySelectorAll(".menu-app");
+        appMenus.forEach((appMenu) => {
+          switch (appMenu.id) {
+            case "YT":
+              appMenu.addEventListener("click", (e) => runApp(ID_YOUTUBE));
+
+              break;
+            case "SS":
+              appMenu.addEventListener("click", (e) => runApp(ID_SCREENSHARE));
+              break;
+            case "BT":
+              appMenu.addEventListener("click", (e) => runApp(ID_BLUETOOTH));
+              break;
+            case "NF":
+              appMenu.addEventListener("click", (e) => runApp(ID_NETFLIX));
+              break;
+            default:
+              console.log("no availabe app found");
+              break;
+          }
+        });
+      }
+      document.addEventListener("keydown", keyNav);
+    </script>
+  </body>
+</html>

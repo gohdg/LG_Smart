@@ -1,0 +1,26 @@
+<!-- file이 너무 클때 쪼개서 보내려 할 때의 예시 -->
+<service>
+    <setup>
+        <versionNumber>2</versionNumber>
+        <modelName>GLOBAL-PLAT4</modelName>
+        <priority>NORMAL</priority>
+        <content>
+            <type>EPK_FIRMWARE</type>
+            <subversionNumber>2</subversionNumber>
+            <data>GP4_ATSC_BB_COMMER_MP_mtk5369_A1_RevNo5115c_V03.24.00_ezi_first_V2_SECURED.epk</d
+            ata>
+            <frequency>0</frequency>
+            <programNum>0</programNum>
+            <cTag>0</cTag>
+        </content>
+        <content>
+            <type>EPK_FIRMWARE</type>
+            <subversionNumber>2</subversionNumber>
+            <data>GP4_ATSC_BB_COMMER_MP_mtk5369_A1_RevNo5115c_V03.24.00_ezi_second_V2_SECURED.epk<
+            /data>
+            <frequency>0</frequency>
+            <programNum>0</programNum>
+            <cTag>0</cTag>
+        </content>
+    </setup>
+</service>

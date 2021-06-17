@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>HOTEL APP</title>
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<script type="text/javascript" src="js/hcap.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/channelTest.js" charset="UTF-8"></script>
+<script type="text/javascript">
+<!--
+var locale = '';
+var roomNo = '';
+var serverIP = '';
+var serverPort = 0;
+
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+function init() {
+	locale = getUrlParameter('lang_code');
+	roomNo = getUrlParameter('room_no');
+	
+	// read server ip, port
+	hcap.system.getProcentricServer({
+		 "onSuccess" : function(p) {
+			 if (p.ipServer.type === "ip") {
+				serverIP = p.ipServer.ip;
+				serverPort = p.ipServer.port;
+			 } else if (p.ipServer.type === "domain_name") {
+				 //alert("IP server : type = domain_name, domain name = " + p.ipServer.domainName + ", port = " + p.ipServer.port);
+			 }
+		 },
+		 "onFailure" : function(f) {
+			 //alert("onFailure : errorMessage = " + f.errorMessage);
+		 }
+	});
+}
+function keyDown() {
+	//alert(hcap.key.Code.LEFT); //ESC:27 //����ȭ��ǥ:461 //������:1001
+	var keycode = event.keyCode;
+	var realkey = String.fromCharCode(event.keyCode);
+
+	if (keycode == hcap.key.Code.ENTER) { 
+		url = 'http://' + serverIP + ':' + serverPort + '/procentric/application/main/main.do';
+		//alert ('url : ' + url);
+		location.href = url;
+	}
+	/*
+	else{			
+		alert(keycode+"---------"+realkey);		
+	}
+	
+	*/
+ }
+document.onkeydown = keyDown;
+
+-->
+</script>
+<body onload=init()>
+<!-- AUDIO play -->
+<audio contenteditable="true" loop="loop" autoplay >
+    <source src="media/welcom.mp3"  type="audio/mp3" />
+</audio>
+<!--// AUDIO play -->
+
+
+<div id="wrap">		
+    <!--
+	<div id="visual"><img src="/procentric/application/images/welcome_bg.jpg"></div>		
+	-->
+	<div id="visual">
+	<video src="media/intro_hotel01.mp4" loop autoplay>
+	</div>
+	<div id="title-welcome">
+		<img src="images/welcome_logo.png">
+		<div class="text-welcome">파라다이스시티에 오신  것을 환영합니다. <br> 아트테인먼트 복합리조트 파라다이스시티에서 격이 다른 시간을 <br> 경험해보시기 바랍니다. <span class="bold"></span></div>		
+	</div>
+	<div class="btn-press-ok"><a>OK 버튼을 누르세요.</a></div>	
+</div>
+</body>
+</html>

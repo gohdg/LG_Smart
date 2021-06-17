@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XAIT>
+	<versionNumber>2</versionNumber>
+	<AbstractService>
+		<svcName>NetBridge-LGE</svcName>
+		<svcId>0x2</svcId>
+		<isAutoSelect>true</isAutoSelect>
+		<ApplicationList>
+			<Application>
+				<appName>NetBridgeApp</appName>
+				<applicationIdentifier>
+					<orgId>2</orgId>
+					<appId>2</appId>
+				</applicationIdentifier>
+				<applicationDescriptor>
+					<type>Hcap-h</type>
+					<controlCode>AUTOSTART</controlCode>
+					<visibility>NOT_VISIBLE_USERS</visibility>
+					<priority>255</priority>
+					<version>2</version>
+				</applicationDescriptor>
+				<HcapDescriptor>							
+					<url>http://192.168.50.46/procentric/application/index.html</url>
+					<!-- <url>http://10.178.94.142:8080/procentric/application/local-app.zip</url> -->
+					<applicationStructure>
+						<baseDirectory>/</baseDirectory>
+						<classpathExtension>/</classpathExtension>
+						<initialClass>index.html</initialClass>
+					</applicationStructure>
+				</HcapDescriptor>
+			</Application>
+		</ApplicationList>
+	</AbstractService>
+</XAIT>

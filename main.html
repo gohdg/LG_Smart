@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/hcap.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+var var_room_number = "";
+var var_lang_code = "";
+
+var get_room =	hcap.property.getProperty({
+	"key":"room_number",
+	    "onSuccess":function(s) {
+	    	console.log("onSuccess : property value = " + s.value);
+	    	//alert("onSuccess : property value = " + s.value);
+	        var_room_number = s.value;
+	        move_Main();
+	    }, 
+	    "onFailure":function(f) {
+	        console.log("onFailure : errorMessage = " + f.errorMessage);
+	        var_room_number = "0000000";
+	        move_Main();
+	        //alert("onFailure : errorMessage = " + f.errorMessage);
+	    }
+	});
+
+
+function move_Main(){ 
+		//self.location.href='http://10.177.206.40:4005/test/video_loop/main_video.html';  // good
+		//self.location.href='http://10.177.108.101:8080/main.html';  // DJ' PC Tomcat 7 : good
+		//self.location.href='http://10.178.94.142:8081/main.html';		 // 142 Tomcat 7 : 
+		//self.location.href='http://10.178.94.142:8080/procentric/application/a.html';  // DJ' PC Tomcat 8 : 
+		//self.location.href='file:///home/user/hotel/apache-tomcat-8.5.12/webapps/ROOT/resources/procentric/application/a.html';  // DJ' PC Tomcat 8 : 
+		//return;
+		//alert ('142 8080');
+	
+		if (var_room_number == "11111") { var_lang_code = "en"; }
+		else if (var_room_number == "11141") { var_lang_code = "en"; }
+		else if (var_room_number == "11000") { var_lang_code = "jp"; }
+		else if (var_room_number == "7005") { var_lang_code = "jp"; }
+		else if (var_room_number == "11029") { var_lang_code = "jp"; }
+		else if (var_room_number == "7029") { var_lang_code = "jp"; }
+		else if (var_room_number == "11008") { var_lang_code = "jp"; }
+		else if (var_room_number == "7021") { var_lang_code = "jp"; }
+		else if (var_room_number == "7011") { var_lang_code = "jp"; }
+		else if (var_room_number == "7008") { var_lang_code = "jp"; }
+		else if (var_room_number == "11011") { var_lang_code = "jp"; }
+		else if (var_room_number == "11007") { var_lang_code = "jp"; }
+		else if (var_room_number == "11009") { var_lang_code = "jp"; }
+		else if (var_room_number == "11010") { var_lang_code = "jp"; }
+		else if (var_room_number == "7128") {var_lang_code = "en"; }
+	
+		location.href="intro.html?lang_code=" + var_lang_code + "&room_no=" + var_room_number;
+		//location.href="/procentric/application/intro.do?lang_code=" + var_lang_code + "&room_no=" + var_room_number;
+		//location.href="/procentric/application/intro.do?lang_code=" + "jp" + "&room_no=" + "7128";
+		
+}
+
+</script>
+</head>
+<!-- <body onload="move_Main();"> -->
+<body onload="get_room();">
+</body>
+</html>
