@@ -13,7 +13,7 @@ body {
   align-items: center; */
   min-height: 100vh;
   /* background: #e0f7fa; */
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
 
   font-family: Poppins;
   width: 100vw;
@@ -32,14 +32,16 @@ header div {
   margin-top: 10px;
   transform: translateX(-1000px);
   transition: all 0.5s ease-in-out;
+  /* border: 1px solid blue; */
+  width: 70%;
 }
 .greeting-active {
   transform: translateX(100px);
 }
-.greeting div {
+.greeting {
   padding: 20px;
 }
-.greeting div h1 {
+.greeting h1 {
   font-size: 55px;
   text-transform: capitalize;
   color: #454545;
